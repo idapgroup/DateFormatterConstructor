@@ -27,7 +27,7 @@ let formatter = DateFormatter.customDateFormatter()
 ```
 
 | Available format templates | Representation |
-| -------------------------- | -------------- |
+| -------------------------- |:--------------:|
 | .time(withOnly: .hours)  | 23 |
 | .time(withOnly: .hoursAndMinutes)  | 23:59 |
 | .time(withOnly: .minutes)  | 59 |
