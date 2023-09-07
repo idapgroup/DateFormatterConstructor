@@ -11,11 +11,11 @@ formatter.dateFormat = "HH:mm:ss"
 ```
 you write:
 ```swift
-let formatter = DateFormatter.customDateFormatter(format: .fullTime(format: .twentyFour))
+let formatter = DateFormatter.custom(format: .fullTime(format: .twentyFour))
 ```
 You can also optionally select the locale and timezone:
 ```swift
-let formatter = DateFormatter.customDateFormatter(format: DateFormatter.DateFormat, locale: Locale(identifier: "en-US"), timeZone: .gmt)
+let formatter = DateFormatter.custom(format: DateFormatter.DateFormat, locale: Locale(identifier: "en-US"), timeZone: .gmt)
 ```
 or leave them as default as
 ```swift
@@ -23,23 +23,33 @@ or leave them as default as
 ```
 if you do not specify a format, the ```.fullTimeAndDate``` format will be used by default:
 ```swift
-let formatter = DateFormatter.customDateFormatter()
+let formatter = DateFormatter.custom()
 ```
 
 | Available format templates | Representation |
 | -------------------------- |:--------------:|
-| .time(withOnly: .hours)  | 23 |
-| .time(withOnly: .hoursAndMinutes)  | 23:59 |
-| .time(withOnly: .minutes)  | 59 |
-| .time(withOnly: .minutesAndSeconds) | 59:59 |
-| .time(withOnly: .seconds) | 59 |
-| .fullTime(format: .twelve) | 11:59:59 |
-| .fullTime(format: .twentyFour) | 23:59:59 |
-| .date(format: .pointNumDate) | 11.08.2023 |
-| .date(format: .slashNumDate) | 11/08/2023 |
-| .date(format: .shortWordDate) | 11 Aug 2023 |
-| .date(format: .fullWordDate) | 11 August 2023 |
-| .fullTimeAndDate | 11 August 2023 23:59:59 |
+| ```.time(withOnly: .hours)```  | 23 |
+| ```.time(withOnly: .minutes)```  | 59 |
+| ```.time(withOnly: .seconds)``` | 59 |
+| ```.time(withOnly: [.hours, .minutes])```  | 23:59 |
+| ```.fullTime(format: .twelve)``` | 11:59:59 |
+| ```.fullTime(format: .twentyFour)``` | 23:59:59 |
+| ```.fullTime(format: .withAMPM)``` | 11:59:59 PM |
+| ```.date(withOnly: .day)```  | 11 |
+| ```.date(withOnly: .numMonth)``` | 08 |
+| ```.date(withOnly: .shortMonth)``` | Aug |
+| ```.date(withOnly: .wideMonth)``` | August |
+| ```.date(withOnly: .shortYear)``` | 23 |
+| ```.date(withOnly: .wideYear)``` | 2023 |
+| ```.date(withOnly: [.day, .shortMonth, .shortYear])``` | 11 Aug 23 |
+| ```.fullDate(format: .numDate(separator: ","))``` | 11,08,2023 |
+| ```.fullDate(format: .shortWordDate)``` | 11 Aug 2023 |
+| ```.fullDate(format: .fullWordDate)``` | 11 August 2023 |
+| ```.dayOfWeek(format: .number)``` | 5 |
+| ```.dayOfWeek(format: .letter)``` | F |
+| ```.dayOfWeek(format: .abbreviation)``` | Fri |
+| ```.dayOfWeek(format: .word)``` | Friday |
+| ```.fullTimeAndDate``` | 11 August 2023 23:59:59 |
 
 ## Requirements
 

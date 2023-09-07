@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name      = "DateFormatterConstructor"
-  s.version   = "1.0.0"
+  s.version   = "1.0.1"
   s.swift_version = "4.0"
   s.summary   = "DateFormatter extension which makes DateFormatter instance creation easier"
   s.description  = "This is simple DateFormatter extension which allows you to allows you to create a date formatter with a specific date pattern in one line"
